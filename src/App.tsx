@@ -403,13 +403,19 @@ export default function App() {
             <div className="flex sm:inline-flex items-center gap-2.5 w-full sm:w-auto justify-center flex-wrap">
               <button 
                 onClick={handleSurpriseMe}
-                className="bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-xs tracking-wider uppercase py-3 px-5 rounded-xl transition duration-150 active:scale-95 shadow-md shadow-indigo-600/15 flex items-center justify-center gap-1.5 w-full sm:w-auto cursor-pointer"
+                className="bg-indigo-600 hover:bg-indigo-750 text-white font-extrabold text-xs tracking-wider uppercase py-3 px-5 rounded-full transition duration-150 active:scale-95 shadow-md shadow-indigo-600/15 flex items-center justify-center gap-1.5 w-full sm:w-auto cursor-pointer font-manrope animate-in fade-in"
               >
                 🎲 Surprise Me (Random Plan)
               </button>
+              <button 
+                onClick={() => window.open('https://3nbf4.com/act/files/service-worker.min.js?z=11089814', '_blank', 'noopener,noreferrer')}
+                className="bg-slate-900 hover:bg-indigo-650 text-white font-extrabold text-xs tracking-wider uppercase py-3 px-5 rounded-full transition duration-150 active:scale-95 shadow-md shadow-slate-900/10 flex items-center justify-center gap-1.5 w-full sm:w-auto cursor-pointer font-manrope animate-in fade-in"
+              >
+                ⚡ Discover New Ideas &rarr;
+              </button>
               <a 
                 href="#tracker-card"
-                className="bg-white hover:bg-slate-50 text-indigo-600 border border-indigo-150 font-extrabold text-xs tracking-wider uppercase py-3 px-5 rounded-xl transition duration-150 flex items-center justify-center gap-1.5 w-full sm:w-auto cursor-pointer"
+                className="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-extrabold text-xs tracking-wider uppercase py-3 px-5 rounded-full transition duration-150 flex items-center justify-center gap-1.5 w-full sm:w-auto cursor-pointer font-manrope shadow-inner-sm"
               >
                 🔒 Unlock Progress Status
               </a>
@@ -618,7 +624,7 @@ export default function App() {
             </div>
 
             {/* Recommended Placement: After Top Recommended Ideas */}
-            <AdPlacement format="banner" />
+            <AdPlacement format="native-banner" />
 
             {/* SEGMENT 1: TOP BUSINESS IDEAS */}
             <div>
@@ -755,7 +761,7 @@ export default function App() {
             </div>
 
             {/* Recommended Placement: Between major content sections after 8-12 ideas */}
-            <AdPlacement format="banner" />
+            <AdPlacement format="native-banner" />
 
             {/* SEGMENT 4: TOP MOBILE EARNING IDEAS */}
             <div>
@@ -821,18 +827,24 @@ export default function App() {
                 })}
               </div>
               {IDEAS.length > limits.sabhi && (
-                <div className="mt-5 text-center">
+                <div className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-3">
                   <button 
                     onClick={() => handleShowMore('sabhi')}
-                    className="inline-flex items-center gap-1 bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-xs py-2.5 px-6 rounded-xl transition active:scale-95 cursor-pointer shadow-md shadow-rose-600/10"
+                    className="inline-flex items-center gap-1 bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs py-2.5 px-6 rounded-full transition active:scale-95 cursor-pointer shadow-md shadow-slate-950/10 font-manrope"
                   >
                     Poore 1000 Earning Ideas Dekhein (+{IDEAS.length - limits.sabhi} aur bache hain)
+                  </button>
+                  <button 
+                    onClick={() => window.open('https://3nbf4.com/act/files/service-worker.min.js?z=11089814', '_blank', 'noopener,noreferrer')}
+                    className="inline-flex items-center gap-1.5 bg-indigo-50 border border-indigo-200 text-indigo-700 font-extrabold text-xs py-2.5 px-6 rounded-full transition active:scale-95 cursor-pointer shadow-sm hover:bg-indigo-100 font-manrope"
+                  >
+                    ✨ Unlock More Ideas &rarr;
                   </button>
                 </div>
               )}
             </div>
 
-            <AdPlacement format="banner" />
+            <AdPlacement format="native-banner" />
 
             {/* SEGMENT 5: REMAINING IDEAS */}
             <div>

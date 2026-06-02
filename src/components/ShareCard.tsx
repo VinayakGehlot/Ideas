@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Share2, Instagram, Award, Lock, Sparkles } from 'lucide-react';
 import { useAppStore } from '../store';
 import { triggerWhatsAppShare, triggerInstagramShare } from '../lib/share';
-import { AdPlacement } from './AdPlacement';
+import { AdPlacement, MONETAG_SMARTLINK_URL } from './AdPlacement';
 
 export function ShareCard() {
   const store = useAppStore();
@@ -118,20 +118,20 @@ export function ShareCard() {
       </div>
 
       {/* Recommended Placement: Before unlock actions */}
-      <AdPlacement format="banner" />
+      <AdPlacement format="native-banner" />
 
       {/* Share Actions Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <button 
           onClick={handleWhatsApp}
-          className="bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3 px-5 rounded-xl flex items-center justify-center gap-2.5 transition-all shadow-md hover:shadow-lg active:scale-95 text-xs tracking-wider uppercase cursor-pointer"
+          className="bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3 px-5 rounded-full flex items-center justify-center gap-2.5 transition-all shadow-md hover:shadow-lg active:scale-95 text-xs tracking-wider uppercase cursor-pointer font-manrope"
         >
           <Share2 className="w-4.5 h-4.5" />
           WhatsApp pe Share karein
         </button>
         <button 
           onClick={handleInstagram}
-          className="bg-gradient-to-r from-pink-500 via-rose-500 to-yellow-500 hover:opacity-95 text-white font-extrabold py-3 px-5 rounded-xl flex items-center justify-center gap-2.5 transition-all shadow-md hover:shadow-lg active:scale-95 text-xs tracking-wider uppercase cursor-pointer"
+          className="bg-gradient-to-r from-pink-500 via-rose-500 to-yellow-500 hover:opacity-95 text-white font-extrabold py-3 px-5 rounded-full flex items-center justify-center gap-2.5 transition-all shadow-md hover:shadow-lg active:scale-95 text-xs tracking-wider uppercase cursor-pointer"
         >
           <Instagram className="w-4.5 h-4.5" />
           Instagram pe Share karein
@@ -141,6 +141,19 @@ export function ShareCard() {
       <p className="text-[11px] text-slate-400 font-medium italic text-center mt-3">
         "Copy text auto-copy ho jayega, direct apne friends ya groups me paste karke help karein!"
       </p>
+
+      {/* Direct SmartLink Option for exploring curated campaigns */}
+      <div className="mt-5 pt-3.5 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-2.5 bg-slate-50/50 p-3 rounded-xl">
+        <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider font-manrope text-center sm:text-left">
+          🎁 Direct Option (Sponsor Unlock Shortcut)
+        </span>
+        <button 
+          onClick={() => window.open(MONETAG_SMARTLINK_URL, '_blank', 'noopener,noreferrer')}
+          className="bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-[9px] tracking-wider uppercase px-4 py-2 rounded-full flex items-center gap-1 transition-all active:scale-98 cursor-pointer font-manrope whitespace-nowrap"
+        >
+          🚀 Explore Opportunities &rarr;
+        </button>
+      </div>
       
       {/* Floating inlineToast inside card */}
       {showToast && (

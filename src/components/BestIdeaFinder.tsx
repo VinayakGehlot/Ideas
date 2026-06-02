@@ -5,6 +5,8 @@ import { IDEAS } from '../data';
 import { calculateIdeaScore } from '../lib/score';
 import { translateEarningPotential, translateCategory } from '../lib/translate';
 
+import { MONETAG_SMARTLINK_URL } from './AdPlacement';
+
 interface Props {
   onSelectIdea: (id: string) => void;
   unlockedCount: number;
@@ -236,12 +238,18 @@ export function BestIdeaFinder({ onSelectIdea, unlockedCount }: Props) {
                 )}
               </div>
 
-              <div className="text-center mt-3 border-t border-slate-50 pt-3">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-3 border-t border-slate-100 pt-3">
                 <button 
                   onClick={resetQuiz}
-                  className="text-xs text-indigo-650 hover:text-indigo-800 font-extrabold flex items-center justify-center gap-1 mx-auto cursor-pointer"
+                  className="text-xs text-slate-500 hover:text-slate-700 font-extrabold flex items-center justify-center gap-1 cursor-pointer"
                 >
                   <RefreshCw className="w-3.5 h-3.5" /> Retake Best Match Quiz
+                </button>
+                <button 
+                  onClick={() => window.open(MONETAG_SMARTLINK_URL, '_blank', 'noopener,noreferrer')}
+                  className="text-xs text-indigo-650 hover:text-indigo-805 font-bold flex items-center justify-center gap-1 cursor-pointer bg-indigo-50/70 hover:bg-indigo-50 px-4 py-1.5 rounded-full border border-indigo-100/50"
+                >
+                  🚀 Explore Opportunities &rarr;
                 </button>
               </div>
             </div>
