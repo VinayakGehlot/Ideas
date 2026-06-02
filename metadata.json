@@ -1,0 +1,6 @@
+{
+  "name": "500 Ideas",
+  "description": "500 Real Earning Ideas written in Roman Hindi",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
