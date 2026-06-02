@@ -48,14 +48,14 @@ export default function App() {
   const [filterInvestment, setFilterInvestment] = useState<string>('All'); // 'All' | 'Low' | 'Medium' | 'High'
   const [filterChannel, setFilterChannel] = useState<string>('All'); // 'All' | 'Online' | 'Offline' | 'AI' | 'Students' | 'Business'
 
-  // Limits for homepage subsections
+  // Limits for homepage subsections (maximum 3-5 visible for sleek curated feel)
   const [limits, setLimits] = useState({
-    business: 6,
-    online: 6,
-    ai: 6,
-    mobile: 6,
-    sabhi: 9,
-    remaining: 12
+    business: 3,
+    online: 3,
+    ai: 3,
+    mobile: 3,
+    sabhi: 4,
+    remaining: 3
   });
 
   // Track viewing history when selectedIdeaId transitions
@@ -68,7 +68,7 @@ export default function App() {
   const handleShowMore = (section: keyof typeof limits) => {
     setLimits(prev => ({
       ...prev,
-      [section]: prev[section] + 12
+      [section]: prev[section] + 6
     }));
   };
 
@@ -418,30 +418,30 @@ export default function App() {
         )}
 
         {/* SEARCH & FILTERS BOX */}
-        <div className="bg-white border rounded-2xl p-4 shadow-sm mb-6 max-w-4xl mx-auto">
-          <div className="flex flex-col sm:flex-row gap-2">
+        <div className="bg-white border border-slate-150 rounded-2xl p-3 shadow-[0_4px_16px_-4px_rgba(0,0,0,0.04)] mb-8 max-w-4xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-2.5">
             <div className="flex-1 relative">
               <input 
                 type="text" 
-                placeholder="Ideas search karein (jaise: 'Freelancing', 'AI Agent', 'Low Investment', 'Beginner')..." 
+                placeholder="1000+ ideas me search kare..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full bg-slate-100 border-none rounded-xl py-3 pl-4 pr-10 text-xs focus:ring-2 focus:ring-indigo-600 transition"
+                className="w-full bg-slate-50 border border-slate-200/50 rounded-full py-3 pl-5 pr-12 text-[12.5px] font-medium font-sans focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:bg-white transition cursor-text placeholder-slate-400 shadow-sm"
               />
-              <Search className="absolute right-3.5 top-1/2 -translate-y-1/2 h-4.5 w-4.5 text-slate-400" />
+              <Search className="absolute right-4.5 top-1/2 -translate-y-1/2 h-5 w-5 text-indigo-550 pointer-events-none" />
             </div>
             
             <div className="flex gap-2 shrink-0">
               <button 
                 onClick={() => setShowFilters(!showFilters)}
                 className={cn(
-                  "p-3 rounded-xl border text-xs font-bold transition flex items-center gap-1.5 cursor-pointer justify-center flex-1 sm:flex-initial",
+                  "px-4.5 py-3 rounded-full border text-[11.5px] font-bold transition flex items-center gap-1.5 cursor-pointer justify-center flex-1 sm:flex-initial font-manrope",
                   showFilters || filterDifficulty !== 'All' || filterInvestment !== 'All' || filterChannel !== 'All'
                     ? "bg-indigo-50 border-indigo-200 text-indigo-700 font-extrabold"
-                    : "border-slate-200 hover:bg-slate-50 text-slate-600"
+                    : "border-slate-200 bg-white hover:bg-slate-50 text-slate-600"
                 )}
               >
-                <Filter className="h-4 w-4" />
+                <Filter className="h-3.5 w-3.5 text-indigo-650" />
                 <span>Filters</span>
                 {(filterDifficulty !== 'All' || filterInvestment !== 'All' || filterChannel !== 'All') && (
                   <span className="w-2 h-2 rounded-full bg-rose-500 inline-block animate-pulse" />
@@ -450,7 +450,7 @@ export default function App() {
               
               <button 
                 onClick={resetFilters}
-                className="p-3 border border-slate-200 hover:bg-slate-50 rounded-xl text-xs font-bold text-slate-500 cursor-pointer flex items-center justify-center"
+                className="px-4 py-3 border border-slate-250 bg-white hover:bg-slate-50 rounded-full text-[11.5px] font-extrabold text-slate-500 hover:text-slate-700 cursor-pointer flex items-center justify-center font-manrope"
                 title="Reset Search & Filters"
               >
                 Reset
@@ -527,17 +527,17 @@ export default function App() {
         </div>
 
         {/* FIXED CATEGORY TABS SYSTEM */}
-        <div className="flex gap-2 overflow-x-auto pb-3 mb-6 -mx-4 px-4 sm:mx-0 sm:px-0 no-scrollbar sticky top-16 bg-slate-50/95 py-2.5 z-25 border-b border-slate-200/50">
-          <div className="flex gap-1.5">
+        <div className="flex gap-2 overflow-x-auto pb-3.5 mb-8 -mx-4 px-4 sm:mx-0 sm:px-0 no-scrollbar sticky top-16 bg-slate-50/95 backdrop-blur-md py-3 z-25 border-b border-slate-200/40">
+          <div className="flex gap-2">
             {CATEGORY_TABS.map(tab => (
               <button
                 key={`tab-${tab.id}`}
                 onClick={() => { setSelectedCat(tab.id); setViewMode('all'); }}
                 className={cn(
-                  "whitespace-nowrap px-4 py-2 rounded-xl font-extrabold text-xs transition-all cursor-pointer border select-none", 
+                  "whitespace-nowrap px-4 py-2 rounded-full font-bold text-xs transition-all cursor-pointer border select-none font-manrope shadow-[0_1px_2px_rgba(0,0,0,0.01)]", 
                   selectedCat === tab.id && viewMode === 'all'
-                    ? "bg-indigo-600 border-indigo-650 text-white shadow-sm" 
-                    : "bg-white border-slate-200 hover:bg-slate-100 text-slate-600"
+                    ? "bg-slate-900 border-slate-900 text-white shadow-sm" 
+                    : "bg-white border-slate-200/80 hover:bg-slate-50 text-slate-650 hover:text-slate-850"
                 )}
               >
                 {tab.label}
