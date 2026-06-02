@@ -617,6 +617,9 @@ export default function App() {
               </div>
             </div>
 
+            {/* Recommended Placement: After Top Recommended Ideas */}
+            <AdPlacement format="banner" />
+
             {/* SEGMENT 1: TOP BUSINESS IDEAS */}
             <div>
               <div className="flex items-center justify-between mb-4 pb-2 border-b border-slate-100">
@@ -751,6 +754,9 @@ export default function App() {
               )}
             </div>
 
+            {/* Recommended Placement: Between major content sections after 8-12 ideas */}
+            <AdPlacement format="banner" />
+
             {/* SEGMENT 4: TOP MOBILE EARNING IDEAS */}
             <div>
               <div className="flex items-center justify-between mb-4 pb-2 border-b border-slate-100">
@@ -786,6 +792,9 @@ export default function App() {
                 </div>
               )}
             </div>
+
+            {/* Recommended Placement: After another milestone set of ideas */}
+            <AdPlacement format="banner" />
 
             {/* SABHI IDEAS SECTION (Simple vertical list of top concepts, ranked high quality first without categories grouping) */}
             <div>

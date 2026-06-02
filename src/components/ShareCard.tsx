@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Share2, Instagram, Award, Lock, Sparkles } from 'lucide-react';
 import { useAppStore } from '../store';
 import { triggerWhatsAppShare, triggerInstagramShare } from '../lib/share';
+import { AdPlacement } from './AdPlacement';
 
 export function ShareCard() {
   const store = useAppStore();
@@ -115,6 +116,9 @@ export function ShareCard() {
           />
         </div>
       </div>
+
+      {/* Recommended Placement: Before unlock actions */}
+      <AdPlacement format="banner" />
 
       {/* Share Actions Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
