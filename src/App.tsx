@@ -408,7 +408,7 @@ export default function App() {
                 🎲 Surprise Me (Random Plan)
               </button>
               <button 
-                onClick={() => window.open('https://3nbf4.com/act/files/service-worker.min.js?z=11089814', '_blank', 'noopener,noreferrer')}
+                onClick={() => window.open('https://omg10.com/4/11090638', '_blank', 'noopener,noreferrer')}
                 className="bg-slate-900 hover:bg-indigo-650 text-white font-extrabold text-xs tracking-wider uppercase py-3 px-5 rounded-full transition duration-150 active:scale-95 shadow-md shadow-slate-900/10 flex items-center justify-center gap-1.5 w-full sm:w-auto cursor-pointer font-manrope animate-in fade-in"
               >
                 ⚡ Discover New Ideas &rarr;
@@ -835,7 +835,7 @@ export default function App() {
                     Poore 1000 Earning Ideas Dekhein (+{IDEAS.length - limits.sabhi} aur bache hain)
                   </button>
                   <button 
-                    onClick={() => window.open('https://3nbf4.com/act/files/service-worker.min.js?z=11089814', '_blank', 'noopener,noreferrer')}
+                    onClick={() => window.open('https://omg10.com/4/11090638', '_blank', 'noopener,noreferrer')}
                     className="inline-flex items-center gap-1.5 bg-indigo-50 border border-indigo-200 text-indigo-700 font-extrabold text-xs py-2.5 px-6 rounded-full transition active:scale-95 cursor-pointer shadow-sm hover:bg-indigo-100 font-manrope"
                   >
                     ✨ Unlock More Ideas &rarr;

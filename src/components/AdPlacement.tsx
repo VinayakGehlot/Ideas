@@ -6,7 +6,7 @@ interface Props {
 }
 
 // Monetag verified SmartLink URL (built on native zone and domain details)
-export const MONETAG_SMARTLINK_URL = "https://3nbf4.com/act/files/service-worker.min.js?z=11089814";
+export const MONETAG_SMARTLINK_URL = "https://omg10.com/4/11090638";
 
 export function AdPlacement({ format = 'banner' }: Props) {
   // Rotate premium mock sponsors/native ads so it always looks dynamic, clean and high retention
@@ -54,11 +54,9 @@ export function AdPlacement({ format = 'banner' }: Props) {
         <div className="text-[8px] font-bold text-slate-400 p-1 tracking-widest uppercase select-none border-b border-light border-slate-200/40">
           RECOMMENDED NATIVE AD PARTNER
         </div>
-        {/* Placeholder element for dynamically loaded Monetag Native Banner (Zone 11089928) */}
+        {/* Placeholder element for dynamically loaded Monetag Native Banner */}
         <div 
           className="monetag-native-zone-target min-h-[90px] flex items-center justify-center p-3 text-xs text-slate-500 font-medium"
-          data-zone="11089928"
-          id="monetag-zone-11089928"
         >
           <div className="flex flex-col items-center gap-1.5 py-4 cursor-pointer" onClick={handleSmartLinkClick}>
             <p className="font-poppins font-semibold text-slate-700 hover:text-indigo-650 flex items-center gap-1">
